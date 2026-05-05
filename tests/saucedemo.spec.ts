@@ -17,11 +17,8 @@ test("successfull login",async({page})=>{
     await page.getByRole("textbox",{name:"Zip/Postal Code"}).fill("123445");
     await page.getByRole("button", { name: "Continue" }).click();
     await expect(page).toHaveURL("https://www.saucedemo.com/checkout-step-two.html");
-    // await page.screenshot({ path: 'debug.png' });
     await page.getByRole("button", { name: "Finish" }).click();
     await page.getByRole("button", { name: "Open Menu" }).click();
     await page.getByRole("link", { name: "Logout" }).click();
     await expect(page).toHaveURL("https://www.saucedemo.com/");
 })
-
-// npx playwright test --debug
